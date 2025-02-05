@@ -7,7 +7,7 @@ This arrangement of dotfiles is taken from [here](https://news.ycombinator.com/i
 First, create an empty repo with no license or readme in github, and then:
 
 ```
-curl -s https://raw.githubusercontent.com/adrshsrvstv/dotfiles.sh/refs/heads/main/setup.sh | bash
+curl -s https://raw.githubusercontent.com/adrshsrvstv/dotfiles.sh/refs/heads/main/setup.sh | zsh
 ```
 You should also add the `dotfiles` alias command to your `.bashrc` or  `.zshrc`. Now, you can use the `dotfiles` command to do git operation from anywhere in your $HOME directory:
 
@@ -23,5 +23,5 @@ dotfiles push
 
 To set up a new machine, clone the repo to a temporary directory. This is because you might have some default config files in your $HOME which will cause a normal clone to fail.
 ```
-curl -s https://raw.githubusercontent.com/adrshsrvstv/dotfiles.sh/refs/heads/main/bootstrap.sh | bash
+curl -s https://raw.githubusercontent.com/adrshsrvstv/dotfiles.sh/refs/heads/main/bootstrap.sh | zsh
 ```

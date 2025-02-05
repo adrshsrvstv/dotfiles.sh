@@ -11,3 +11,5 @@ dotfiles checkout --orphan $BRANCH
 git config --global --type bool push.autoSetupRemote true
 
 dotfiles remote add origin git@github.com:adrshsrvstv/.dotfiles.git
+
+echo "Done. Add your files using the dotfiles alias and push to the remote as usual."
