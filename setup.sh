@@ -1,15 +1,15 @@
-git init --bare ~/.dotfiles
+#!/usr/bin/env bash
 
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-dotfiles config --local status.showUntrackedFiles no
-
-export BRANCH=$(hostname -s)
-
-dotfiles checkout --orphan $BRANCH
+BRANCH=$(hostname -s)
 
 git config --global --type bool push.autoSetupRemote true
 
-dotfiles remote add origin git@github.com:adrshsrvstv/.dotfiles.git
+git init --bare $HOME/.dotfiles
 
-echo "Done. Add your files using the dotfiles alias and push to the remote as usual."
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
+
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout --orphan $BRANCH
+
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME remote add origin git@github.com:adrshsrvstv/.dotfiles.git
+
+echo "Done. Export your alias and then add your dotfiles as shown in the README."
